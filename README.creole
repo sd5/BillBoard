@@ -1,0 +1,2 @@
+=== Description
+This plugin allows the players on a server to add advertisement on a billboard, which can be considered by all the other players.
