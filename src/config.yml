@@ -1,2 +1,3 @@
 settings:
+  max-billboard-length: 20
   date-format: yyyy-MM-dd kk:mm:ss

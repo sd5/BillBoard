@@ -25,6 +25,7 @@ public class Config {
 	private static FileConfiguration config;
 	private static File configFile;
 	
+	public static int maxBillboardLength;
 	public static String dateFormat;
 	
 	/**
@@ -52,6 +53,7 @@ public class Config {
 		
 		//Load values from config.
 		ConfigurationSection settings = config.getConfigurationSection("settings");
+		maxBillboardLength = settings.getInt("max-billboard-length");
 		dateFormat = settings.getString("date-format");
 		
 	}
