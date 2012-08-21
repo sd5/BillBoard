@@ -11,8 +11,12 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class BBMain extends JavaPlugin {
 
+	public static BBMain p;
+	
 	@Override
 	public void onEnable() {
+	
+		p = this;
 		
 	}
 	
