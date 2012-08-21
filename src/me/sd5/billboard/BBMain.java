@@ -18,6 +18,9 @@ public class BBMain extends JavaPlugin {
 	
 		p = this;
 		
+		//Load config from hard disk.
+		Config.load();
+		
 	}
 	
 	@Override
