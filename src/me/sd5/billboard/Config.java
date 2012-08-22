@@ -28,6 +28,13 @@ public class Config {
 	public static int maxBillboardLength;
 	public static String dateFormat;
 	
+	public static String mySqlHost;
+	public static String mySqlPort;
+	public static String mySqlUsername;
+	public static String mySqlPassword;
+	public static String mySqlDatabase;
+	public static String mySqlTable;
+	
 	/**
 	 * Loads the config from the hard disk.
 	 */
@@ -55,6 +62,14 @@ public class Config {
 		ConfigurationSection settings = config.getConfigurationSection("settings");
 		maxBillboardLength = settings.getInt("max-billboard-length");
 		dateFormat = settings.getString("date-format");
+		
+		ConfigurationSection mySql = config.getConfigurationSection("my-sql");
+		mySqlHost = mySql.getString("host");
+		mySqlPort = mySql.getString("port");
+		mySqlUsername = mySql.getString("username");
+		mySqlPassword = mySql.getString("password");
+		mySqlDatabase = mySql.getString("database");
+		mySqlTable = mySql.getString("table");
 		
 	}
 	
