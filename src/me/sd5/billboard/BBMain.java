@@ -21,6 +21,9 @@ public class BBMain extends JavaPlugin {
 		//Load config from hard disk.
 		Config.load();
 		
+		//Connect to database.
+		MySQLManager.connect();
+		
 	}
 	
 	@Override
