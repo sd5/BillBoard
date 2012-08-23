@@ -1,5 +1,8 @@
 package me.sd5.billboard;
 
+import java.util.logging.Level;
+
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -23,6 +26,13 @@ public class BBMain extends JavaPlugin {
 		
 		//Connect to database.
 		MySQLManager.connect();
+		
+		if(MySQLManager.isConnected()) {
+			BillBoard.load();
+		} else {
+			Bukkit.getLogger().log(Level.SEVERE, "Disabling plugin!");
+			Bukkit.getPluginManager().disablePlugin(this);
+		}
 		
 	}
 	

@@ -70,6 +70,18 @@ public class MySQLManager {
 	}
 	
 	/**
+	 * Returns whether the plugin is
+	 * connected to the database.
+	 * @return:
+	 *   Whether we are connected to the database.
+	 */
+	public static boolean isConnected() {
+		
+		return (connection == null) ? false : true;
+		
+	}
+	
+	/**
 	 * Loads the billboard from the database
 	 * and returns it as a List of Advertising.
 	 * @return:
