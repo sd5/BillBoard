@@ -3,6 +3,7 @@ package me.sd5.billboard.commands;
 import java.util.Collections;
 import java.util.List;
 
+import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 
 /**
@@ -45,7 +46,7 @@ public abstract class BaseCommand {
 	 * The action that happens when a command is called.
 	 * This method must be overwritten by the commands.
 	 */
-	public abstract void execute();
+	public abstract void execute(Player player, String[] args);
 	
 	/**
 	 * Returns the name of the command.
