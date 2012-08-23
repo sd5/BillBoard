@@ -25,7 +25,8 @@ public class MySQLManager {
 	private static Connection connection;
 	
 	/**
-	 * Connects to the database.
+	 * Connects to the database and creates
+	 * a new table (if it doesn't exist).
 	 * The MySQL settings can be changed
 	 * in the config.
 	 */
@@ -37,6 +38,20 @@ public class MySQLManager {
 		} catch(SQLException e) {
 			Bukkit.getLogger().log(Level.SEVERE, "Could not connect to database!");
 			Bukkit.getLogger().log(Level.SEVERE, "Check database settings in config!");
+		}
+		
+		Bukkit.getLogger().log(Level.INFO, "Checking for table in database...");
+		Statement statement = null;
+		try {
+			statement = connection.createStatement();
+			String sql = "CREATE TABLE " + Config.mySqlTable + "(";
+			sql += "player  VARCHAR(255),";
+			sql += "date    VARCHAR(255),";
+			sql += "message VARCHAR(255))";
+			statement.execute(sql);
+			Bukkit.getLogger().log(Level.INFO, "Created new table: " + Config.mySqlTable + ".");
+		} catch(SQLException e) {
+			Bukkit.getLogger().log(Level.INFO, "Table already exists.");
 		}
 		
 	}
