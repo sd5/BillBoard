@@ -1,4 +1,0 @@
-name: BillBoard
-description: This plugins allows to add advertisement on a billboard so that everyone can read it. 
-version: 0.1
-main: me.sd5.billboard.BillBoard
