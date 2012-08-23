@@ -37,6 +37,10 @@ public class BillBoard {
 		
 		board.add(0, advertising);
 		
+		if(board.size() > Config.maxBillboardLength) {
+			board.remove(board.size() - 1);
+		}
+		
 	}
 	
 }
