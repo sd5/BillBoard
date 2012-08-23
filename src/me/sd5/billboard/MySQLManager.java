@@ -2,7 +2,11 @@ package me.sd5.billboard;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
@@ -34,6 +38,41 @@ public class MySQLManager {
 			Bukkit.getLogger().log(Level.SEVERE, "Could not connect to database!");
 			Bukkit.getLogger().log(Level.SEVERE, "Check database settings in config!");
 		}
+		
+	}
+	
+	/**
+	 * Loads the billboard from the database
+	 * and returns it as a List of Advertising.
+	 * @return:
+	 *   A List of Advertising.
+	 */
+	public static List<Advertising> getBillboard() {
+		
+		List<Advertising> billboard = new ArrayList<Advertising>();
+		
+		Statement statement = null;
+		try {
+			statement = connection.createStatement();
+			ResultSet result = statement.executeQuery("SELECT * FROM " + Config.mySqlTable);
+			
+			while(result.next()) {
+				String player = result.getString(1);
+				String date = result.getString(2);
+				String message = result.getString(3);
+				billboard.add(new Advertising(player, date, message));
+			}
+		} catch(SQLException e) {
+			Bukkit.getLogger().log(Level.SEVERE, "Could not load billboard from database!");
+		} finally {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return billboard;
 		
 	}
 	

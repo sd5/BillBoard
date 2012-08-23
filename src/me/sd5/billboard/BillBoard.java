@@ -20,6 +20,15 @@ public class BillBoard {
 	private static List<Advertising> board = new ArrayList<Advertising>();
 	
 	/**
+	 * Loads the billboard from the database.
+	 */
+	public static void load() {
+		
+		board = MySQLManager.getBillboard();
+		
+	}
+	
+	/**
 	 * Adds an advertising to the billboard.
 	 * @param advertising:
 	 *   The advertising to add.
