@@ -1,8 +1,17 @@
 package me.sd5.billboard;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 
+import me.sd5.billboard.commands.BaseCommand;
+import me.sd5.billboard.commands.CommandNew;
+
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -14,6 +23,8 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class BBMain extends JavaPlugin {
 
+	public static List<BaseCommand> commands;
+	
 	public static BBMain p;
 	
 	@Override
@@ -23,6 +34,10 @@ public class BBMain extends JavaPlugin {
 		
 		//Load config from hard disk.
 		Config.load();
+		
+		//Register commands.
+		commands = new ArrayList<BaseCommand>();
+		commands.add(new CommandNew());
 		
 		//Connect to database.
 		MySQLManager.connect();
@@ -41,6 +56,25 @@ public class BBMain extends JavaPlugin {
 		
 		//Disconnect from database.
 		MySQLManager.disconnect();
+		
+	}
+	
+	@Override
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+		
+		if(sender instanceof Player) {
+			
+			for(BaseCommand c : commands) {
+				if(c.getAliases().contains(args[0])) {
+					c.execute((Player) sender, BBUtil.getCommandArguments(args));
+				}
+			}
+			
+		} else {
+			sender.sendMessage(ChatColor.RED + "This command command can only be executed by players!");
+		}
+		
+		return true;
 		
 	}
 	
