@@ -76,4 +76,37 @@ public class MySQLManager {
 		
 	}
 	
+	/**
+	 * Saves the billboard to the database.
+	 * @param billboard:
+	 *   The billboard.
+	 */
+	public static void saveBillboard(List<Advertising> billboard) {
+		
+		Statement statement = null;
+		try {
+			statement = connection.createStatement();
+			
+			String sql1 = "TRUNCATE TABLE " + Config.mySqlTable;
+			statement.executeUpdate(sql1);
+			
+			for(Advertising a : billboard) {
+				String sql2 = "INSERT INTO " + Config.mySqlTable + " (";
+				sql2 += "player, date, message";
+				sql2 += ") VALUES (";
+				sql2 += "'" + a.getPlayer() + "', '" + a.getDate() + "', '" + a.getMessage() + "')";
+				statement.executeUpdate(sql2);
+			}
+		} catch(SQLException e) {
+			Bukkit.getLogger().log(Level.SEVERE, "Could not save billboard to database!");
+		} finally {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
 }
