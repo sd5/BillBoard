@@ -1,6 +1,6 @@
 package me.sd5.billboard.commands;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.entity.Player;
@@ -37,7 +37,6 @@ public abstract class BaseCommand {
 		
 		this.name = name;
 		this.aliases = aliases;
-		this.aliases.add(0, name);
 		this.permission = permission;
 		
 	}
@@ -71,7 +70,10 @@ public abstract class BaseCommand {
 	 */
 	public List<String> getAliases() {
 		
-		return Collections.unmodifiableList(aliases);
+		List<String> aliases = new ArrayList<String>();
+		aliases.add(this.name);
+		aliases.addAll(this.aliases);
+		return aliases;
 		
 	}
 	

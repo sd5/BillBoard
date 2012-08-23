@@ -38,6 +38,7 @@ public class MySQLManager {
 		} catch(SQLException e) {
 			Bukkit.getLogger().log(Level.SEVERE, "Could not connect to database!");
 			Bukkit.getLogger().log(Level.SEVERE, "Check database settings in config!");
+			return;
 		}
 		
 		Bukkit.getLogger().log(Level.INFO, "Checking for table in database...");
@@ -61,10 +62,12 @@ public class MySQLManager {
 	 */
 	public static void disconnect() {
 		
-		try {
-			connection.close();
-		} catch (SQLException e) {
-			Bukkit.getLogger().log(Level.SEVERE, "Could not disconnect from database!");
+		if(connection != null) {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				Bukkit.getLogger().log(Level.SEVERE, "Could not disconnect from database!");
+			}
 		}
 		
 	}

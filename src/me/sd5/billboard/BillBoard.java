@@ -41,6 +41,8 @@ public class BillBoard {
 			board.remove(board.size() - 1);
 		}
 		
+		MySQLManager.saveBillboard(board);
+		
 	}
 	
 }

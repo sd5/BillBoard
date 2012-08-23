@@ -22,7 +22,7 @@ public class BBUtil {
 	 */
 	public static String listToString(List<String> list) {
 		
-		String text = null;
+		String text = "";
 		
 		for(String s : list) {
 			text += s;
