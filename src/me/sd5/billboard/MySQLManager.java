@@ -42,6 +42,19 @@ public class MySQLManager {
 	}
 	
 	/**
+	 * Disconnects from the database.
+	 */
+	public static void disconnect() {
+		
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			Bukkit.getLogger().log(Level.SEVERE, "Could not disconnect from database!");
+		}
+		
+	}
+	
+	/**
 	 * Loads the billboard from the database
 	 * and returns it as a List of Advertising.
 	 * @return:

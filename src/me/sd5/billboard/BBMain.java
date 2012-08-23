@@ -29,6 +29,9 @@ public class BBMain extends JavaPlugin {
 	@Override
 	public void onDisable() {
 		
+		//Disconnect from database.
+		MySQLManager.disconnect();
+		
 	}
 	
 }
