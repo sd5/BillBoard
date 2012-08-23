@@ -4,3 +4,7 @@ This plugin allows the players on a server to add advertisement on a billboard, 
 === Storage
 The billboard will be saved in a MySQL database, later on I will add SQLite support. An advertising consists of the name of the player, the date when it was created and the message.
 If the billboard is saved in an MySQL database, you will be able to read it with PHP and show the BillBoard on a website.
+
+=== Current development status
+Actual development version: 0.2 \\
+Actual release version: None \\
