@@ -20,6 +20,11 @@ public class MySQLManager {
 
 	private static Connection connection;
 	
+	/**
+	 * Connects to the database.
+	 * The MySQL settings can be changed
+	 * in the config.
+	 */
 	public static void connect() {
 		
 		try {
