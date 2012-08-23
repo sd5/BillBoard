@@ -35,7 +35,7 @@ public class BillBoard {
 	 */
 	public static void add(Advertising advertising) {
 		
-		board.add(advertising);
+		board.add(0, advertising);
 		
 	}
 	
