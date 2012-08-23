@@ -1,5 +1,10 @@
 package me.sd5.billboard;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import me.sd5.billboard.Config;
+
 /**
  * 
  * @author sd5
@@ -29,6 +34,22 @@ public class Advertising {
 		
 		this.player = player;
 		this.date = date;
+		this.message = message;
+		
+	}
+	
+	/**
+	 * Creates a new advertising.
+	 * The current date is used.
+	 * @param player:
+	 *   The player who created the advertising.
+	 * @param message:
+	 *   The message of the advertising.
+	 */
+	public Advertising(String player, String message) {
+		
+		this.player = player;
+		this.date = (new SimpleDateFormat(Config.dateFormat).format(new Date()));
 		this.message = message;
 		
 	}
