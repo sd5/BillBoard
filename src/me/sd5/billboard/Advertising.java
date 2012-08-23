@@ -54,4 +54,37 @@ public class Advertising {
 		
 	}
 	
+	/**
+	 * Returns the player who created the advertising.
+	 * @return:
+	 *   The player.
+	 */
+	public String getPlayer() {
+		
+		return player;
+		
+	}
+	
+	/**
+	 * Returns the date when the advertising was created;
+	 * @return:
+	 *   The date.
+	 */
+	public String getDate() {
+		
+		return date;
+		
+	}
+	
+	/**
+	 * Returns the message of this advertising.
+	 * @return:
+	 *   The message.
+	 */
+	public String getMessage() {
+		
+		return message;
+		
+	}
+	
 }
