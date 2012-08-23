@@ -43,10 +43,14 @@ public abstract class BaseCommand {
 	}
 	
 	/**
-	 * The action that happens when a command is called.
-	 * This method must be overwritten by the commands.
+	 * The code which is executed when
+	 * this command is called.
+	 * @param player:
+	 *   The player who typed the command.
+	 * @param args:
+	 *   The arguments of the command.
 	 */
-	public abstract void execute(Player player, String[] args);
+	public abstract void execute(Player player, List<String> args);
 	
 	/**
 	 * Returns the name of the command.

@@ -1,6 +1,7 @@
 package me.sd5.billboard.commands;
 
 import java.util.Arrays;
+import java.util.List;
 
 import me.sd5.billboard.Advertising;
 import me.sd5.billboard.BBUtil;
@@ -24,9 +25,9 @@ public class CommandNew extends BaseCommand {
 	 * Writes a new advertising to the billboard.
 	 */
 	@Override
-	public void execute(Player player, String[] args) {
+	public void execute(Player player, List<String> args) {
 		
-		Advertising advertising = new Advertising(player.getName(), BBUtil.arrayToString(args));
+		Advertising advertising = new Advertising(player.getName(), BBUtil.listToString(args));
 		BillBoard.add(advertising);
 		
 	}

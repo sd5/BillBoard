@@ -1,5 +1,7 @@
 package me.sd5.billboard;
 
+import java.util.List;
+
 /**
  * 
  * @author sd5
@@ -17,12 +19,12 @@ public class BBUtil {
 	 * @return:
 	 *   The String.
 	 */
-	public static String arrayToString(Object[] array) {
+	public static String listToString(List<String> list) {
 		
 		String text = null;
 		
-		for(Object o : array) {
-			text += o.toString();
+		for(String s : list) {
+			text += s;
 			text += " ";
 		}
 		
