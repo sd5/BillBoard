@@ -45,4 +45,29 @@ public class BillBoard {
 		
 	}
 	
+	/**
+	 * Returns the advertising which is
+	 * at the given index on the board.
+	 * @param index:
+	 *   The index.
+	 * @return:
+	 *   The Advertising.
+	 */
+	public static Advertising get(int index) {
+		
+		return board.get(index);
+		
+	}
+	
+	/**
+	 * Returns the size of the billboard.
+	 * @return:
+	 *   The size.
+	 */
+	public static int size() {
+		
+		return board.size();
+		
+	}
+	
 }

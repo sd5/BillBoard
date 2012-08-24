@@ -7,4 +7,5 @@ commands:
     description: The main BillBoard command.
     usage: |
            /<command> new [message]
+           /<command> list <page>
     aliases: [bb]

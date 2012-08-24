@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import me.sd5.billboard.commands.BaseCommand;
+import me.sd5.billboard.commands.CommandList;
 import me.sd5.billboard.commands.CommandNew;
 
 import org.bukkit.Bukkit;
@@ -37,6 +38,7 @@ public class BBMain extends JavaPlugin {
 		
 		//Register commands.
 		commands = new ArrayList<BaseCommand>();
+		commands.add(new CommandList());
 		commands.add(new CommandNew());
 		
 		//Connect to database.
