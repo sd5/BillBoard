@@ -16,6 +16,7 @@ show the BillBoard on a website. \\
 |=Command|=Aliases|=Permission|=Description|
 |new [message]|add, create|billboard.new|Creates a new advertising.|
 |list <page>|show|billboard.list|Lists all advertising on the billboard.|
+|clear|reset|billboard.clear|Clears the billboard.|
 Note: \\
 [...]: Required parameters. \\
 <...>: Optional parameters. \\

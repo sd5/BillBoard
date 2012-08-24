@@ -70,4 +70,14 @@ public class BillBoard {
 		
 	}
 	
+	/**
+	 * Clears the billboard.
+	 */
+	public static void clear() {
+		
+		board.clear();
+		MySQLManager.saveBillboard(board);
+		
+	}
+	
 }
