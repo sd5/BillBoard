@@ -13,5 +13,5 @@ MySQL database, you will be able to read it with PHP and \\
 show the BillBoard on a website. \\
 
 === Current development status
-Actual development version: 0.2 \\
+Actual development version: 0.3 \\
 Actual release version: None \\
