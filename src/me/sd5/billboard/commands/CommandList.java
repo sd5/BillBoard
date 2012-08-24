@@ -48,7 +48,7 @@ public class CommandList extends BaseCommand {
 			int page_end = Math.min(page * PAGE_SIZE, BillBoard.size());		
 			for(int n = page_start; n < page_end; n++) {
 				Advertising advertising = BillBoard.get(n);
-				player.sendMessage(ChatColor.GREEN + advertising.getPlayer() + ChatColor.RED + " | " + ChatColor.GREEN + advertising.getDate() + ChatColor.RED + " | " + ChatColor.GREEN + advertising.getMessage());
+				player.sendMessage(ChatColor.GREEN + advertising.getPlayer() + ChatColor.RED + " | " + ChatColor.GREEN + advertising.getMessage());
 			}
 		} else {
 			player.sendMessage(ChatColor.RED + "There is no advertisement on the billboard.");
