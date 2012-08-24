@@ -12,6 +12,14 @@ will add SQLite support. If the billboard is saved in an \\
 MySQL database, you will be able to read it with PHP and \\
 show the BillBoard on a website. \\
 
+=== Commands
+|=Command|=Aliases|=Permission|=Description|
+|new [message]|add, create|billboard.new|Creates a new advertising.|
+|list <page>|show|billboard.list|Lists all advertising on the billboard.|
+Note: \\
+[...]: Required parameters. \\
+<...>: Optional parameters. \\
+
 === Current development status
 Actual development version: 0.3 \\
 Actual release version: None \\
