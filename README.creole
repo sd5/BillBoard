@@ -22,5 +22,5 @@ Note: \\
 <...>: Optional parameters. \\
 
 === Current development status
-Actual development version: 0.4 \\
+Actual development version: 0.5 \\
 Actual release version: None \\
