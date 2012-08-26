@@ -1,0 +1,17 @@
+0.5:
+- Added a configurable limit which declares how many advertisements a player can have on the billboard.
+
+0.4:
+- Removed date from '/bb list' because it needs too much space.
+- New command '/bb clear' that removes all advertisements from the billboard.
+
+0.3:
+- New command '/bb list' that lists up all the advertisements on the billboard.
+
+0.2:
+- Added a config.
+- Added MySQL support for saving the billboard.
+- New command '/bb new' that creates a new advertisement.
+
+0.1:
+- Initial release.
