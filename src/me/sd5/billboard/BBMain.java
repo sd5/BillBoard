@@ -26,7 +26,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class BBMain extends JavaPlugin {
 
 	public static List<BaseCommand> commands;
-	
+	public static String chatName = ChatColor.RED + "[" + ChatColor.YELLOW + "Billboard" + ChatColor.RED + "] " + ChatColor.BLUE;
 	public static BBMain p;
 	
 	@Override

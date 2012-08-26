@@ -3,6 +3,7 @@ package me.sd5.billboard.commands;
 import java.util.Arrays;
 import java.util.List;
 
+import me.sd5.billboard.BBMain;
 import me.sd5.billboard.BillBoard;
 
 import org.bukkit.ChatColor;
@@ -28,10 +29,10 @@ public class CommandClear extends BaseCommand {
 		
 		int size = BillBoard.size();
 		if(BillBoard.clear()) {
-			player.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "Billboard" + ChatColor.RED + "] " + ChatColor.BLUE + "Cleared billboard!");
+			player.sendMessage(BBMain.chatName + "Cleared billboard!");
 			player.sendMessage(ChatColor.GREEN + "Removed " + ChatColor.RED + size + ChatColor.GREEN + " advertisements.");
 		} else {
-			player.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "Billboard" + ChatColor.RED + "] " + ChatColor.BLUE + "Billboard is already empty!");
+			player.sendMessage(BBMain.chatName + "Billboard is already empty!");
 		}
 		
 	}

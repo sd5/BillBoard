@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import me.sd5.billboard.Advertising;
+import me.sd5.billboard.BBMain;
 import me.sd5.billboard.BillBoard;
 
 import org.bukkit.ChatColor;
@@ -42,7 +43,7 @@ public class CommandList extends BaseCommand {
 			}
 		}
 		
-		player.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "Billboard" + ChatColor.RED + "] " + ChatColor.BLUE + "Showing page " + ChatColor.RED + page + ChatColor.BLUE + " of " + ChatColor.RED + pages + ChatColor.BLUE + " :");
+		player.sendMessage(BBMain.chatName + "Showing page " + ChatColor.RED + page + ChatColor.BLUE + " of " + ChatColor.RED + pages + ChatColor.BLUE + " :");
 		if(BillBoard.size() >= 1) {
 			int page_start = (page - 1) * PAGE_SIZE;
 			int page_end = Math.min(page * PAGE_SIZE, BillBoard.size());		
