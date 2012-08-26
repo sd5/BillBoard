@@ -81,11 +81,18 @@ public class BillBoard {
 	
 	/**
 	 * Clears the billboard.
+	 * @return:
+	 *   Whether the billboard was already empty or not.
 	 */
-	public static void clear() {
+	public static boolean clear() {
 		
-		board.clear();
-		MySQLManager.saveBillboard(board);
+		if(!board.isEmpty()) {
+			board.clear();
+			MySQLManager.saveBillboard(board);
+			return true;
+		} else {
+			return false;
+		}
 		
 	}
 	

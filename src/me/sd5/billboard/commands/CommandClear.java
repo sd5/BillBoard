@@ -5,6 +5,7 @@ import java.util.List;
 
 import me.sd5.billboard.BillBoard;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 
@@ -25,7 +26,13 @@ public class CommandClear extends BaseCommand {
 	@Override
 	public void execute(Player player, List<String> args) {
 		
-		BillBoard.clear();
+		int size = BillBoard.size();
+		if(BillBoard.clear()) {
+			player.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "Billboard" + ChatColor.RED + "] " + ChatColor.BLUE + "Cleared billboard!");
+			player.sendMessage(ChatColor.GREEN + "Removed " + ChatColor.RED + size + ChatColor.GREEN + " advertisements.");
+		} else {
+			player.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "Billboard" + ChatColor.RED + "] " + ChatColor.BLUE + "Billboard is already empty!");
+		}
 		
 	}
 
