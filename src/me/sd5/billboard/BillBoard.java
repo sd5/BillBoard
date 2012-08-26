@@ -32,8 +32,16 @@ public class BillBoard {
 	 * Adds an advertising to the billboard.
 	 * @param advertising:
 	 *   The advertising to add.
+	 * @return:
+	 *   Whether the advertising was added to the
+	 *   billboard or whether the player has too
+	 *   many advertising on the billboard.
 	 */
-	public static void add(Advertising advertising) {
+	public static boolean add(Advertising advertising) {
+		
+		if(BillBoard.get(advertising.getPlayer()).size() >= Config.maxPlayerAdvertising) {
+			return false;
+		}
 		
 		board.add(0, advertising);
 		
@@ -42,6 +50,7 @@ public class BillBoard {
 		}
 		
 		MySQLManager.saveBillboard(board);
+		return true;
 		
 	}
 	
@@ -77,6 +86,27 @@ public class BillBoard {
 		
 		board.clear();
 		MySQLManager.saveBillboard(board);
+		
+	}
+	
+	/**
+	 * Returns a list of Advertising created by this player.
+	 * @param player:
+	 *   The player.
+	 * @return:
+	 *   A list of Advertising.
+	 */
+	public static List<Advertising> get(String player) {
+		
+		List<Advertising> list = new ArrayList<Advertising>();
+		
+		for(Advertising a : board) {
+			if(a.getPlayer() == player) {
+				list.add(a);
+			}
+		}
+		
+		return list;
 		
 	}
 	

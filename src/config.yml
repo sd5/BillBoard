@@ -1,5 +1,6 @@
 settings:
   max-billboard-length: 20
+  max-player-advertising: 3
   date-format: yyyy-MM-dd kk:mm:ss
 my-sql:
   host: localhost

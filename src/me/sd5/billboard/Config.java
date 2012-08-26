@@ -26,6 +26,7 @@ public class Config {
 	private static File configFile;
 	
 	public static int maxBillboardLength;
+	public static int maxPlayerAdvertising;
 	public static String dateFormat;
 	
 	public static String mySqlHost;
@@ -61,6 +62,7 @@ public class Config {
 		//Load values from config.
 		ConfigurationSection settings = config.getConfigurationSection("settings");
 		maxBillboardLength = settings.getInt("max-billboard-length");
+		maxPlayerAdvertising = settings.getInt("max-player-advertising");
 		dateFormat = settings.getString("date-format");
 		
 		ConfigurationSection mySql = config.getConfigurationSection("my-sql");
