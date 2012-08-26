@@ -2,6 +2,7 @@ package me.sd5.billboard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * 
@@ -114,6 +115,26 @@ public class BillBoard {
 		}
 		
 		return list;
+		
+	}
+	
+	/**
+	 * Returns a free advertisement number.
+	 * @return:
+	 *   A free advertisement number.
+	 */
+	public static int getFreeId() {
+		
+		int number = (new Random()).nextInt((int) Math.pow(Config.maxBillboardLength, 2));
+		
+		for(Advertising a : board) {
+			if(number == a.getId()) {
+				number = getFreeId();
+				break;
+			}
+		}
+		
+		return number;
 		
 	}
 	

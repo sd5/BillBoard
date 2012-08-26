@@ -16,12 +16,13 @@ import me.sd5.billboard.Config;
  */
 public class Advertising {
 
+	private int id;
 	private String player;
 	private String date;
 	private String message;
 	
 	/**
-	 * Creates a new advertising.
+	 * Creates a new advertising with a free ID.
 	 * @param player:
 	 *   The player who created the advertising.
 	 * @param date:
@@ -32,6 +33,7 @@ public class Advertising {
 	 */
 	public Advertising(String player, String date, String message) {
 		
+		this.id = BillBoard.getFreeId();
 		this.player = player;
 		this.date = date;
 		this.message = message;
@@ -39,7 +41,7 @@ public class Advertising {
 	}
 	
 	/**
-	 * Creates a new advertising.
+	 * Creates a new advertising with a free ID.
 	 * The current date is used.
 	 * @param player:
 	 *   The player who created the advertising.
@@ -48,9 +50,21 @@ public class Advertising {
 	 */
 	public Advertising(String player, String message) {
 		
+		this.id = BillBoard.getFreeId();
 		this.player = player;
 		this.date = (new SimpleDateFormat(Config.dateFormat).format(new Date()));
 		this.message = message;
+		
+	}
+	
+	/**
+	 * Returns the id of the advertising.
+	 * @return:
+	 *   The id.
+	 */
+	public int getId() {
+		
+		return id;
 		
 	}
 	
