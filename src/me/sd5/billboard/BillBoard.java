@@ -125,8 +125,8 @@ public class BillBoard {
 	 */
 	public static int getFreeId() {
 		
-		int min = (int) Math.pow(10, String.valueOf(Config.maxBillboardLength).length() - 1);
-		int max = (min * 10) - 1;
+		int min = (int) Math.pow(10, String.valueOf(Config.maxBillboardLength).length());
+		int max = (min * 10);
 		int number = min + (new Random()).nextInt(max - min);
 		//int number = (new Random()).nextInt((int) Math.pow(Config.maxBillboardLength, 2));
 		
