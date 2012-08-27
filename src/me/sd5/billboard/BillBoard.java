@@ -109,7 +109,7 @@ public class BillBoard {
 		List<Advertising> list = new ArrayList<Advertising>();
 		
 		for(Advertising a : board) {
-			if(a.getPlayer() == player) {
+			if(a.getPlayer().equals(player)) {
 				list.add(a);
 			}
 		}
